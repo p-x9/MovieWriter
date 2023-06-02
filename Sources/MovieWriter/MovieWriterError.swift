@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MovieWriterError: LocalizedError {
+public enum MovieWriterError: LocalizedError {
     case notStarted
     case alreadyRunning
     case failedToStart
@@ -16,7 +16,7 @@ enum MovieWriterError: LocalizedError {
     case invalidTime
     case notReadyForWriteMoreData
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .notStarted:
             return "Recording has not started yet."

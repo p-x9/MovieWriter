@@ -83,6 +83,15 @@ public class MovieWriter {
     private var audioWriterInput: AVAssetWriterInput?
     private var micWriterInput: AVAssetWriterInput?
 
+    /// Initializer
+    /// - Parameters:
+    ///   - outputUrl: Movie output destination
+    ///   - size: Frame size of video
+    ///   - codec: Video codec
+    ///   - audioFormatId: audio format
+    ///   - audioSampleRate: audio sample rate
+    ///   - audioNumberOfChannel: number of audio channel
+    ///   - fileType: file type
     public init(
         outputUrl: URL,
         size: CGSize,
