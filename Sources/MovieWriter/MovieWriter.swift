@@ -75,13 +75,19 @@ public class MovieWriter {
         }
     }
 
-    private var assetWriter: AVAssetWriter?
+    @_spi(AVKit)
+    public var assetWriter: AVAssetWriter?
 
-    private var writerInput: AVAssetWriterInput?
-    private var adaptor: AVAssetWriterInputPixelBufferAdaptor?
+    @_spi(AVKit)
+    public var writerInput: AVAssetWriterInput?
 
-    private var audioWriterInput: AVAssetWriterInput?
-    private var micWriterInput: AVAssetWriterInput?
+    @_spi(AVKit)
+    public var adaptor: AVAssetWriterInputPixelBufferAdaptor?
+
+    @_spi(AVKit)
+    public var audioWriterInput: AVAssetWriterInput?
+    @_spi(AVKit)
+    public var micWriterInput: AVAssetWriterInput?
 
     /// Initializer
     /// - Parameters:
@@ -127,7 +133,7 @@ public class MovieWriter {
 
     /// start video writing
     /// - Parameters:
-    ///   - waitFirstWriting: If true, align the first write with the start time of the video.  
+    ///   - waitFirstWriting: If true, align the first write with the start time of the video.
     /// If false, the time when this method is called is the start time of the video, and the video will be blank until the time of the writing.
     public func start(waitFirstWriting: Bool) throws {
         guard !isRunning else {
