@@ -56,6 +56,17 @@ If `waitUntilFinish` is true, it will not return until the end process is comple
 try movieWriter.end(at: time, waitUntilFinish: true)
 ```
 
+### Access to AVKit-related properties
+The following import allows access to internal properties related to AVKit.
+```swift
+@_spi(AVKit) import MovieWriter
+```
+You will have access to the following properties
+- assetWriter: AVAssetWriter?
+- writerInput: AVAssetWriterInput?
+- adaptor: AVAssetWriterInputPixelBufferAdaptor?
+- audioWriterInput: AVAssetWriterInput?
+- micWriterInput: AVAssetWriterInput?
 
 ## License
 
